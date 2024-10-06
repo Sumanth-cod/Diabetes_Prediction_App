@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label, input {
+            display: block;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .result {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Diabetes Prediction Form</h1>
+    <form action="/predict" method="POST">
+        <label for="pregnancies">Pregnancies:</label>
+        <input type="text" id="pregnancies" name="Pregnancies" required>
+
+        <label for="glucose">Glucose:</label>
+        <input type="text" id="glucose" name="Glucose" required>
+
+        <label for="bloodpressure">Blood Pressure:</label>
+        <input type="text" id="bloodpressure" name="BloodPressure" required>
+
+        <label for="skinthickness">Skin Thickness:</label>
+        <input type="text" id="skinthickness" name="SkinThickness" required>
+
+        <label for="insulin">Insulin:</label>
+        <input type="text" id="insulin" name="Insulin" required>
+
+        <label for="bmi">BMI:</label>
+        <input type="text" id="bmi" name="BMI" required>
+
+        <label for="dpf">Diabetes Pedigree Function:</label>
+        <input type="text" id="dpf" name="DiabetesPedigreeFunction" required>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="Age" required>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    <div class="result">
+        <h2>{{ prediction_text }}</h2>  <!-- This will display the prediction result -->
+    </div>
+</body>
+</html>
