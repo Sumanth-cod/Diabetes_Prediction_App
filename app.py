@@ -9,10 +9,12 @@ app = Flask(__name__)
 model = pickle.load(open("classification-model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
+
 # Define the home page route
-@app.route("/")
+@app.route('/')
 def home():
     return render_template("index.html")
+
 
 # Define the predict route for form submission
 @app.route("/predict", methods=["POST"])
@@ -35,6 +37,7 @@ def predict():
 
     # Render the template and display the result
     return render_template("index.html", prediction_text=f"The Person is {result}")
+
 
 # Run the Flask app
 if __name__ == "__main__":
